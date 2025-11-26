@@ -12,7 +12,7 @@ const TicTacToe = () => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:3000";
     const newSocket = io(SERVER_URL); // one socket per room
     setSocket(newSocket);
 
